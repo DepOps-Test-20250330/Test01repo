@@ -41,7 +41,7 @@ resource "aws_lb_listener" "front_http" {
 # Target Group
 # ---------------------------------------------
 resource "aws_lb_target_group" "webapp_blue" {
-  name        = "${var.project}-${var.environment}-webapp-blue-tg"
+  name        = "${var.project}-${var.environment}-blue-tg"
   vpc_id      = aws_vpc.vpc.id
   protocol    = "HTTP"
   port        = 3000
@@ -60,7 +60,7 @@ resource "aws_lb_target_group" "webapp_blue" {
 }
 
 resource "aws_lb_target_group" "webapp_green" {
-  name        = "${var.project}-${var.environment}-webapp-green-tg"
+  name        = "${var.project}-${var.environment}-green-tg"
   vpc_id      = aws_vpc.vpc.id
   protocol    = "HTTP"
   port        = 3000
